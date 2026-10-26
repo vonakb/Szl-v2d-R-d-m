@@ -86,3 +86,12 @@ body{
 
     transition: none;
 }
+
+#scoreDiv{
+    font-size: 5em;
+    background:
+        linear-gradient(rgba(217, 217, 217, 0.58)) padding-box,
+        conic-gradient(
+            red, yellow, lime, cyan, blue, magenta, red
+        ) border-box;
+}

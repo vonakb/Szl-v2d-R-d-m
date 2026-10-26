@@ -1,9 +1,20 @@
+const Hit = new Audio("Hit.mp3")
+const MJ = new Audio("SlaveToTheRythym.webm")
 
-
+Hit.volume = 0.5
+MJ.volume = 0.1
+function HangJatszo(audio, kezdoIdo = 0){
+    audio.currentTime = kezdoIdo
+    audio.play().catch(() => {})
+}
 
 function Game(left, up, down, right, mainDiv){
+    HangJatszo(MJ, 25)
+    
     mainDiv.innerHTML = ""
-    //#region Nyilak
+    let score = 80;
+        
+    
     //#region Nyilgenerálás
     const ArrowButtons = document.createElement("div")
     ArrowButtons.setAttribute("style", `
@@ -71,8 +82,716 @@ function Game(left, up, down, right, mainDiv){
         ArrowButtons.appendChild(Arrow)
     }
     mainDiv.appendChild(ArrowButtons)
+    
     //#endregion
-    document.addEventListener("keydown", (event) => {
+   
+
+    //#region Zene
+    const notes =  [
+
+    //#region intro
+    { nyil: 0, ido: 480 },
+    { nyil: 2, ido: 480 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 0, ido: 480 },
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 2, ido: 480 },
+    { nyil: 0, ido: 240 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 480 },
+
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 0, ido: 240 },
+    { nyil: 3, ido: 480 },
+    { nyil: 0, ido: 480 },
+    { nyil: 2, ido: 480 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 0, ido: 480 },
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 2, ido: 480 },
+    { nyil: 0, ido: 240 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 480 },
+
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 0, ido: 240 },
+    { nyil: 3, ido: 480 },
+    { nyil: 0, ido: 480 },
+    { nyil: 2, ido: 480 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 0, ido: 480 },
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 2, ido: 480 },
+    { nyil: 0, ido: 240 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 480 },
+
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 0, ido: 240 },
+    { nyil: 3, ido: 480 },
+    { nyil: 0, ido: 480 },
+    { nyil: 2, ido: 480 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 0, ido: 480 },
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 3, ido: 240 },
+
+    { nyil: 2, ido: 480 },
+    { nyil: 0, ido: 240 },
+    { nyil: 1, ido: 240 },
+    { nyil: 3, ido: 480 },
+
+    { nyil: 1, ido: 480 },
+    { nyil: 2, ido: 240 },
+    { nyil: 0, ido: 240 },
+    { nyil: 3, ido: 1000 },
+    //#endregion
+    //#region verse1
+
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 1020},
+    //8000
+
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 1020},
+    //7240
+    { nyil: 0, ido: 500},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 500},
+    { nyil: 2, ido: 1020},
+    //7780
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 1200},
+    //7920
+    //#endregion
+    //#region SZLÉV 2 DÖ RÍDÖM
+
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 900},
+//#endregion
+
+//#region  verse 2
+    { nyil: 0, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 1020},
+    //8000
+
+    { nyil: 3, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 1020},
+    //7240
+    { nyil: 0, ido: 500},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 500},
+    { nyil: 2, ido: 1020},
+    //7780
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 1100},
+//#endregion
+//#region SZLÉV 2 DÖ RIDÖM
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 840},
+
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 800},
+//#endregion
+//#region verse3elod
+    { nyil: 1, ido: 0},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 0},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 0},
+    { nyil: 0, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 0},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 0},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 0},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 0},
+    { nyil: 0, ido: 0},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 0},
+    { nyil: 0, ido: 0},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 0},
+    { nyil: 0, ido: 1200},
+
+//#endregion
+
+//#region verse3
+    {nyil: 0, ido: 240},
+    { nyil: 0, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 0, ido: 240},
+    {nyil: 0, ido: 240},
+    { nyil: 0, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 0, ido: 240},
+    { nyil: 1, ido: 1020},
+    //8000
+
+    { nyil: 3, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 1020},
+    //7240
+
+    { nyil: 0, ido: 500},
+    { nyil: 3, ido: 120},
+    { nyil: 3, ido: 120},
+    { nyil: 3, ido: 120},
+    { nyil: 3, ido: 120},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 120},
+    { nyil: 1, ido: 120},
+    { nyil: 1, ido: 120},
+    { nyil: 1, ido: 120},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 500},
+    { nyil: 2, ido: 1020},
+    //7780
+    { nyil: 2, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 3, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 1100},
+    { nyil: 2, ido: 1000},
+   
+//#endregion
+//#region SZLÉV 2 DÖ RYTHIM
+{ nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 0, ido: 480},
+
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 2, ido: 240},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 240},
+    { nyil: 3, ido: 480},
+    { nyil: 0, ido: 480},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 480},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 480},
+    { nyil: 1, ido: 240},
+    { nyil: 2, ido: 900},
+//#endregion
+
+//#endregion
+    ]
+    const scoreDiv = document.createElement("div")
+    scoreDiv.innerHTML = score
+    scoreDiv.id = "scoreDiv"
+    mainDiv.appendChild(scoreDiv)
+    const activeNotes = []
+    let combo = 1
+    let elapsedTime = 0
+    let gameOver = false;
+
+    function endGame() {
+        if (gameOver) return;
+
+        gameOver = true;
+        MJ.pause();
+
+        alert("GAME OVER! Próbáld újra!");
+
+        mainDiv.innerHTML = "";
+        mainTitle();
+    }
+    function WinGame(song) {
+        song.addEventListener("ended", () => {
+        if (gameOver) return;
+
+        gameOver = true;
+
+        window.alert(
+            "Gratulálok, végigvitted. Elért pontszámod: " + Math.round(score * combo)
+        );
+
+        mainDiv.innerHTML = "";
+        mainTitle();
+    }, { once: true });  
+    }
+    
+    function checkHit(lane) {
+            const targetArrow = ArrowButtons.children[lane];
+            const targetRect = targetArrow.getBoundingClientRect();
+            const targetY = targetRect.top + targetRect.height / 2;
+
+            const candidates = activeNotes.filter(note =>
+                note.lane === lane &&
+                !note.hit &&
+                note.active
+            );
+        
+            
+            let closestNote = null;
+            let smallestDistance = Infinity;
+        
+            for (const note of candidates) {
+                const rect = note.element.getBoundingClientRect();
+                const noteY = rect.top + rect.height / 2;
+                const distance = Math.abs(noteY - targetY);
+            
+                if (distance < smallestDistance) {
+                    smallestDistance = distance;
+                    closestNote = note;
+                }
+            }
+            
+            
+            if (closestNote && smallestDistance <= 35) {
+                closestNote.hit = true;
+                closestNote.element.remove();
+            
+                const index = activeNotes.indexOf(closestNote);
+                if (index !== -1) {
+                    activeNotes.splice(index, 1);
+                }
+            
+                console.log("PERFECT!!!");
+                score += 20
+                combo += 0.1
+                HangJatszo(Hit)
+            } 
+            else if (closestNote && smallestDistance >= 35 && smallestDistance <= 80){
+                closestNote.hit = true;
+                closestNote.element.remove();
+            
+                const index = activeNotes.indexOf(closestNote);
+                if (index !== -1) {
+                    activeNotes.splice(index, 1);
+                }
+                console.log("MID!")
+                score += 10
+                combo += 0.1
+                HangJatszo(Hit)
+            }
+            
+            
+            else {
+                console.log("MISS!");
+                score -= 20
+                combo = 1
+                 if (score < 0) {
+                    endGame();
+                    return;
+                }
+            }
+            scoreDiv.innerHTML = Math.round(score * combo)
+        }
+     document.addEventListener("keydown", (event) => {
         if(event.repeat) return
         if (event.key === left) {
             ArrowButtons.children[0].classList.add("active")
@@ -111,30 +830,8 @@ function Game(left, up, down, right, mainDiv){
 
 
     })
-    //#endregion
-    //#region Zene
-    const notes =  [
-        {nyil: 0, ido: 0},
-        {nyil: 2, ido: 1000},
-        {nyil: 1, ido: 500},
-        {nyil: 3, ido: 200},
-        {nyil: 1, ido: 1000},
-        {nyil: 2, ido: 500},
-        {nyil: 0, ido: 200},
-        {nyil: 3, ido: 100},
-        {nyil: 1, ido: 200},
-        {nyil: 0, ido: 500},
-        {nyil: 2, ido: 500},
-        {nyil: 0, ido: 100},
-        {nyil: 0, ido: 100},
-        {nyil: 3, ido: 1000},
-
-        
-    ]
-    const activeNotes = []
-
-    let elapsedTime = 0
-    for (let i = 1; i < notes.length; i++) {
+    
+    for (let i = 0; i < notes.length; i++) {
         const noteData = notes[i]
         const note = document.createElement("div")
         note.classList.add("note")
@@ -149,82 +846,73 @@ function Game(left, up, down, right, mainDiv){
         const speed = 1000; // pixel / másodperc
 
         function moveNote(currentTime) {
-                if (lastTime === null) {
-                    lastTime = currentTime;
-                }
-
-             const deltaTime = (currentTime - lastTime) / 1000;
-             lastTime = currentTime;
+            if (lastTime === null) {
+                lastTime = currentTime;
+            }
+            const deltaTime = (currentTime - lastTime) / 1000;
+            lastTime = currentTime;
 
              position += speed * deltaTime;
              note.style.top = position + "px";
 
              if (position < window.innerHeight) {
-                 requestAnimationFrame(moveNote);
-             } else {
-                 note.remove();
-                 const index = activeNotes.findIndex(
-                    activeNote => activeNote.element === note
-                    );
+    requestAnimationFrame(moveNote);
+} else {
+    note.remove();
 
-                if (index !== -1) {
-                    activeNotes.splice(index, 1);
-                }
-             }
+    const index = activeNotes.findIndex(
+        activeNote => activeNote.element === note
+    );
+
+    if (index !== -1) {
+        const missedNote = activeNotes[index];
+
+        // Ha még nem találta el a játékos
+        if (!missedNote.hit && !gameOver) {
+            score -= 20;
+            combo = 1;
+
+            console.log("MISSED NOTE!");
+
+            scoreDiv.innerHTML = Math.round(score * combo);
+
+            // Ha mínuszba kerül a pontszám, vége a játéknak
+            if (score < 0) {
+                endGame();
+                return;
+            }
+        }
+
+        activeNotes.splice(index, 1);
+    }
+}
         }
         
-        setTimeout(() => {requestAnimationFrame(moveNote); note.style.visibility = "visible"; mainDiv.appendChild(note)} , elapsedTime)
+        setTimeout(() => {
+            if(activeNote.hit) return;
+
+            note.style.visibility = "visible";
+            activeNote.active = true
+            
+            requestAnimationFrame(moveNote);
+            
+        } , elapsedTime)
         note.style.visibility = "hidden"
         mainDiv.appendChild(note)
-        activeNotes.push({
+        const activeNote = {
             element: note,
             lane: noteData.nyil,
-            hit: false
-        })
-        elapsedTime += noteData.ido
-        function checkHit(lane) {
-            const targetArrow = ArrowButtons.children[lane];
-            const targetRect = targetArrow.getBoundingClientRect();
-            const targetY = targetRect.top + targetRect.height / 2;
-
-            const candidates = activeNotes.filter(note =>
-                note.lane === lane &&
-                !note.hit &&
-                note.element.isConnected
-            );
-        
-            
-            let closestNote = null;
-            let smallestDistance = Infinity;
-        
-            for (const note of candidates) {
-                const rect = note.element.getBoundingClientRect();
-                const noteY = rect.top + rect.height / 2;
-                const distance = Math.abs(noteY - targetY);
-            
-                if (distance < smallestDistance) {
-                    smallestDistance = distance;
-                    closestNote = note;
-                }
-            }
-        
-            // Legfeljebb 35 pixel eltérés megengedett.
-            if (closestNote && smallestDistance <= 35) {
-                closestNote.hit = true;
-                closestNote.element.remove();
-            
-                const index = activeNotes.indexOf(closestNote);
-                if (index !== -1) {
-                    activeNotes.splice(index, 1);
-                }
-            
-                console.log("HIT!");
-            } else {
-                console.log("MISS!");
-            }
+            hit: false,
+            active: false
         }
+        activeNotes.push(activeNote)
+        elapsedTime += noteData.ido
+        
         
     }
+    WinGame(MJ)
+    
+    
 
 //#endregion
 //#region 

@@ -1,93 +1,93 @@
 const Hit = new Audio("Hit.mp3")
 const MJ = new Audio("SlaveToTheRythym.webm")
 
-Hit.volume = 0.5
+Hit.volume = 0.3
 MJ.volume = 0.1
 function HangJatszo(audio, kezdoIdo = 0){
     audio.currentTime = kezdoIdo
     audio.play().catch(() => {})
 }
+function songSelector(mainDiv) {
+    mainDiv.innerHTML = `<div class="uiverse-pixel-radio-group">
+  <label class="uiverse-pixel-radio">
+    <input type="radio" name="pixel-choice" checked="" />
+    <span class="label-text">Tutorial</span>
+  </label>
+  <label class="uiverse-pixel-radio">
+    <input type="radio" name="pixel-choice" />
+    <span class="label-text">OUT OF ORDER</span>
+  </label>
+  <label class="uiverse-pixel-radio">
+    <input type="radio" name="pixel-choice" />
+    <span class="label-text">Slave To The Rhythm - Michael Jackson</span>
+  </label>
+</div>
+`
+    const radiok = document.querySelectorAll(".uiverse-pixel-radio")
+    const descriptionDiv = document.createElement("div")
+    descriptionDiv.classList.add("description")
+    const playGombDiv= document.createElement("div")
+    playGombDiv.classList.add("button")
+    mainDiv.appendChild(descriptionDiv)
+    mainDiv.appendChild(playGombDiv)
+    let zene = null 
+    function descriptionUpdate() {
+        let description = ""
+        for (const element of radiok) {
+        const input = element.querySelector(`input[type="radio"]`)
+        if (input.checked) {
+            const szoveg = element.querySelector("span").textContent.trim();
+            zene = szoveg
+            playGombDiv.textContent = "Play: " + szoveg
+            
+            if (szoveg === "Tutorial") {
+                description = "Minecraft vagy Elden Ring? Mindegy milyen játék, de mindig érdemes ezzel kezdeni hogy megtudd mi vár rád a jövőben.";
+            } 
+            else if (szoveg === "OUT OF ORDER") {
+                description = "Majd kitalálom";
+            } 
+            else if (szoveg === "Slave To The Rhythm - Michael Jackson") {
+                description = "Heheeee ;)  (Szerintem nehéz de lecsekkolhatod)";
+            }
+            
 
-function Game(left, up, down, right, mainDiv){
-    HangJatszo(MJ, 25)
+
+       
+            
+            descriptionDiv.textContent = description
+            break;
     
-    mainDiv.innerHTML = ""
-    let score = 80;
+        }
+
+    }
+     
+    
+    }
+    playGombDiv.addEventListener("click", () => {
+        Game("ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv, zene)
+    })
+    descriptionUpdate()
+
+    radiok.forEach(element => {
+        element.querySelector(`input[type="radio"]`).addEventListener("change", ()=> {descriptionUpdate()})
+
+
+    });
         
-    
-    //#region Nyilgenerálás
-    const ArrowButtons = document.createElement("div")
-    ArrowButtons.setAttribute("style", `
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+            
 
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;`)
-    if(!(left.includes("Arrow"))){
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        const ArrowTEXT = document.createTextNode(`${left}`)
-        Arrow.appendChild(ArrowTEXT)
-        ArrowButtons.appendChild(Arrow)
-    }
-    else{
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        Arrow.innerHTML = "&#8592;"
-        ArrowButtons.appendChild(Arrow)
-    }
-    if(!(up.includes("Arrow"))){
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        const ArrowTEXT = document.createTextNode(`${up}`)
-        Arrow.appendChild(ArrowTEXT)
-        ArrowButtons.appendChild(Arrow)
-    }
-    else{
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        Arrow.innerHTML = "&#8593;"
-        ArrowButtons.appendChild(Arrow)
-    }
-    if(!(down.includes("Arrow"))){
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        const ArrowTEXT = document.createTextNode(`${down}`)
-        Arrow.appendChild(ArrowTEXT)
-        ArrowButtons.appendChild(Arrow)
-    }
-    else{
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        Arrow.innerHTML = "&#8595;"
-        ArrowButtons.appendChild(Arrow)
-    }
-    if(!(right.includes("Arrow"))){
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        const ArrowTEXT = document.createTextNode(`${right}`)
-        Arrow.appendChild(ArrowTEXT)
-        ArrowButtons.appendChild(Arrow)
-    }
-    else{
-        const Arrow = document.createElement("div")
-        Arrow.classList.add("arrow")
-        Arrow.innerHTML = "&#8594;"
-        ArrowButtons.appendChild(Arrow)
-    }
-    mainDiv.appendChild(ArrowButtons)
-    
-    //#endregion
-   
 
-    //#region Zene
-    const notes =  [
+
+
+
+}
+
+function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv
+    let notes = []
+    //#region Dzsekszon
+    if (Zene === "Slave To The Rhythm - Michael Jackson") {
+        HangJatszo(MJ, 25)
+            notes =  [
 
     //#region intro
     { nyil: 0, ido: 480 },
@@ -689,6 +689,88 @@ function Game(left, up, down, right, mainDiv){
 
 //#endregion
     ]
+    
+    }
+    //#endregion
+    
+    
+    mainDiv.innerHTML = ""
+    let score = 80;
+        
+    
+    //#region Nyilgenerálás
+    const ArrowButtons = document.createElement("div")
+    ArrowButtons.setAttribute("style", `
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;`)
+    if(!(left.includes("Arrow"))){
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        const ArrowTEXT = document.createTextNode(`${left}`)
+        Arrow.appendChild(ArrowTEXT)
+        ArrowButtons.appendChild(Arrow)
+    }
+    else{
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        Arrow.innerHTML = "&#8592;"
+        ArrowButtons.appendChild(Arrow)
+    }
+    if(!(up.includes("Arrow"))){
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        const ArrowTEXT = document.createTextNode(`${up}`)
+        Arrow.appendChild(ArrowTEXT)
+        ArrowButtons.appendChild(Arrow)
+    }
+    else{
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        Arrow.innerHTML = "&#8593;"
+        ArrowButtons.appendChild(Arrow)
+    }
+    if(!(down.includes("Arrow"))){
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        const ArrowTEXT = document.createTextNode(`${down}`)
+        Arrow.appendChild(ArrowTEXT)
+        ArrowButtons.appendChild(Arrow)
+    }
+    else{
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        Arrow.innerHTML = "&#8595;"
+        ArrowButtons.appendChild(Arrow)
+    }
+    if(!(right.includes("Arrow"))){
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        const ArrowTEXT = document.createTextNode(`${right}`)
+        Arrow.appendChild(ArrowTEXT)
+        ArrowButtons.appendChild(Arrow)
+    }
+    else{
+        const Arrow = document.createElement("div")
+        Arrow.classList.add("arrow")
+        Arrow.innerHTML = "&#8594;"
+        ArrowButtons.appendChild(Arrow)
+    }
+    mainDiv.appendChild(ArrowButtons)
+    
+    //#endregion
+   
+
+    //#region Zene
+
     const scoreDiv = document.createElement("div")
     scoreDiv.innerHTML = score
     scoreDiv.id = "scoreDiv"
@@ -697,18 +779,6 @@ function Game(left, up, down, right, mainDiv){
     let combo = 1
     let elapsedTime = 0
     let gameOver = false;
-
-    function endGame() {
-        if (gameOver) return;
-
-        gameOver = true;
-        MJ.pause();
-
-        alert("GAME OVER! Próbáld újra!");
-
-        mainDiv.innerHTML = "";
-        mainTitle();
-    }
     function WinGame(song) {
         song.addEventListener("ended", () => {
         if (gameOver) return;
@@ -716,7 +786,7 @@ function Game(left, up, down, right, mainDiv){
         gameOver = true;
 
         window.alert(
-            "Gratulálok, végigvitted. Elért pontszámod: " + Math.round(score * combo)
+            "Gratulálok, végigvitted. Elért pontszámod: " + score
         );
 
         mainDiv.innerHTML = "";
@@ -761,7 +831,7 @@ function Game(left, up, down, right, mainDiv){
                 }
             
                 console.log("PERFECT!!!");
-                score += 20
+                score += 20 * combo
                 combo += 0.1
                 HangJatszo(Hit)
             } 
@@ -774,7 +844,7 @@ function Game(left, up, down, right, mainDiv){
                     activeNotes.splice(index, 1);
                 }
                 console.log("MID!")
-                score += 10
+                score += 10 * combo
                 combo += 0.1
                 HangJatszo(Hit)
             }
@@ -782,14 +852,10 @@ function Game(left, up, down, right, mainDiv){
             
             else {
                 console.log("MISS!");
-                score -= 20
+                score -= 20 * combo
                 combo = 1
-                 if (score < 0) {
-                    endGame();
-                    return;
-                }
             }
-            scoreDiv.innerHTML = Math.round(score * combo)
+            scoreDiv.innerHTML = score
         }
      document.addEventListener("keydown", (event) => {
         if(event.repeat) return
@@ -866,21 +932,16 @@ function Game(left, up, down, right, mainDiv){
 
     if (index !== -1) {
         const missedNote = activeNotes[index];
-
-        // Ha még nem találta el a játékos
         if (!missedNote.hit && !gameOver) {
             score -= 20;
             combo = 1;
 
             console.log("MISSED NOTE!");
 
-            scoreDiv.innerHTML = Math.round(score * combo);
+            scoreDiv.innerHTML =   score;
 
-            // Ha mínuszba kerül a pontszám, vége a játéknak
-            if (score < 0) {
-                endGame();
-                return;
-            }
+            
+            
         }
 
         activeNotes.splice(index, 1);
@@ -927,10 +988,11 @@ function Game(left, up, down, right, mainDiv){
 
 
 
-
+const mainDiv = document.createElement("div")
 
 function mainTitle() {
-    const mainDiv = document.createElement("div")
+    mainDiv.innerHTML = ""
+    
     const h1 = document.createElement("h1")
     const h1Text = document.createTextNode("Szlév 2 dö Rídöm")
     h1.appendChild(h1Text)
@@ -943,7 +1005,7 @@ function mainTitle() {
     playButton.classList.add("button")
     const playButtonTEXT = document.createTextNode("PLAY")
     playButton.appendChild(playButtonTEXT)
-    playButton.addEventListener("click", () => {Game("ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv);})
+    playButton.addEventListener("click", () => {songSelector(mainDiv);})
 
 
     const settingsButton = document.createElement("div")

@@ -1,8 +1,9 @@
 const Hit = new Audio("Hit.mp3")
 const MJ = new Audio("SlaveToTheRythym.webm")
-
+const tut = new Audio("tutorial.mp3")
 Hit.volume = 0.3
 MJ.volume = 0.1
+tut.volume = 0.5
 function HangJatszo(audio, kezdoIdo = 0){
     audio.currentTime = kezdoIdo
     audio.play().catch(() => {})
@@ -84,9 +85,11 @@ function songSelector(mainDiv) {
 
 function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv
     let notes = []
+    let song = null
     //#region Dzsekszon
     if (Zene === "Slave To The Rhythm - Michael Jackson") {
         HangJatszo(MJ, 25)
+        song = MJ
             notes =  [
 
     //#region intro
@@ -687,11 +690,117 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     { nyil: 2, ido: 900},
 //#endregion
 
-//#endregion
+
     ]
     
     }
-    //#endregion
+//#endregion
+//#region Tutorial
+    else if(Zene === "Tutorial"){
+        song = tut
+        HangJatszo(tut)
+        notes = [
+            {nyil: 0, ido: -32750},
+            {nyil: 2, ido: 3100},
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            
+            {nyil: 2, ido: 3300},
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 0, ido: 700},
+            {nyil: 2, ido: 400},
+            {nyil: 1, ido: 700},
+            {nyil: 0, ido: 400},
+            {nyil: 2, ido: 700},
+            {nyil: 1, ido: 400},
+            
+            {nyil: 2, ido: 2000},
+            {nyil: 2, ido: 500},
+            {nyil: 3, ido: 1000},
+            {nyil: 1, ido: 1000},
+            
+            {nyil: 0, ido: 2000},
+            //
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 2, ido: 3800},
+            
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 2, ido: 3800},
+            
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 2, ido: 3700},
+            
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 2, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 2, ido: 700},
+            {nyil: 1, ido: 1000},
+            
+            {nyil: 2, ido: 900},
+            {nyil: 0, ido: 2000},
+            {nyil: 0, ido: 500},
+            {nyil: 1, ido: 500},
+            {nyil: 2, ido: 500},
+            {nyil: 3, ido: 500},
+            {nyil: 0, ido: 500},
+            
+            {nyil: 2, ido: 1000},
+            {nyil: 0, ido: 2000},
+            {nyil: 3, ido: 500},
+            {nyil: 2, ido: 500},
+            {nyil: 1, ido: 500},
+            {nyil: 0, ido: 500},
+            {nyil: 3, ido: 400},
+            
+            {nyil: 2, ido: 800},
+            {nyil: 0, ido: 2000},
+            {nyil: 3, ido: 500},
+            {nyil: 2, ido: 500},
+            {nyil: 1, ido: 500},
+            {nyil: 0, ido: 500},
+            {nyil: 0, ido: 300},
+
+            {nyil: 0, ido: 500},
+            {nyil: 0, ido: 500},
+            {nyil: 2, ido: 500},
+            {nyil: 2, ido: 500},
+            {nyil: 1, ido: 500},
+            {nyil: 1, ido: 500},
+            {nyil: 3, ido: 500},
+            {nyil: 3, ido: 500},
+            {nyil: 0, ido: 2400},
+            
+            {nyil: 1, ido: 700},
+            {nyil: 3, ido: 700},
+            {nyil: 2, ido: 3500},
+            
+            {nyil: 0, ido: 700},
+            {nyil: 2, ido: 700},
+            {nyil: 1, ido: 3500},
+
+            
+            {nyil: 3, ido: 700},
+            {nyil: 1, ido: 700},
+            {nyil: 0, ido: 700},
+            {nyil: 2, ido: 400},
+            {nyil: 1, ido: 700},
+            {nyil: 0, ido: 400},
+            {nyil: 2, ido: 700},
+            {nyil: 1, ido: 400},
+
+
+
+
+
+        ]
+    }
+
+//#endregion
     
     
     mainDiv.innerHTML = ""
@@ -899,6 +1008,11 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     
     for (let i = 0; i < notes.length; i++) {
         const noteData = notes[i]
+        if (noteData.ido < 0) {
+            elapsedTime += Math.abs(noteData.ido)
+            continue
+        
+        }
         const note = document.createElement("div")
         note.classList.add("note")
         let position = -100;
@@ -971,7 +1085,7 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
         
         
     }
-    WinGame(MJ)
+    WinGame(song)
     
     
 

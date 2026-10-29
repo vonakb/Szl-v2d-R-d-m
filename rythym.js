@@ -93,6 +93,7 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
             notes =  [
 
     //#region intro
+    
     { nyil: 0, ido: 480 },
     { nyil: 2, ido: 480 },
     { nyil: 1, ido: 240 },
@@ -468,23 +469,23 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     { nyil: 2, ido: 800},
 //#endregion
 //#region verse3elod
-    { nyil: 1, ido: 0},
+    { nyil: 1, ido: 0, tipus: "kill"},
     { nyil: 0, ido: 480},
-    { nyil: 2, ido: 0},
+    { nyil: 2, ido: 0, tipus: "kill"},
     { nyil: 3, ido: 480},
-    { nyil: 0, ido: 0},
+    { nyil: 0, ido: 0, tipus: "kill"},
     { nyil: 3, ido: 480},
-    { nyil: 1, ido: 0},
+    { nyil: 1, ido: 0, tipus: "kill"},
     { nyil: 0, ido: 480},
-    { nyil: 2, ido: 0},
+    { nyil: 2, ido: 0, tipus: "kill"},
     { nyil: 3, ido: 480},
-    { nyil: 0, ido: 0},
+    { nyil: 0, ido: 0, tipus: "kill"},
     { nyil: 3, ido: 480},
     { nyil: 1, ido: 480},
     { nyil: 0, ido: 480},
-    { nyil: 2, ido: 480},
+    { nyil: 2, ido: 480, tipus: "kill"},
     { nyil: 3, ido: 0},
-    { nyil: 0, ido: 0},
+    { nyil: 0, ido: 0, tipus: "kill"},
     { nyil: 3, ido: 480},
     { nyil: 2, ido: 480},
     { nyil: 0, ido: 480},
@@ -524,28 +525,28 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
 //#region verse3
     {nyil: 0, ido: 240},
     { nyil: 0, ido: 240},
-    { nyil: 1, ido: 240},
+    { nyil: 1, ido: 240, tipus: "kill"},
     { nyil: 3, ido: 240},
     { nyil: 3, ido: 240},
-    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240, tipus: "kill"},
     { nyil: 0, ido: 240},
-    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 240},
-    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 240},
-    { nyil: 0, ido: 240},
+    { nyil: 0, ido: 240, tipus: "kill"},
     {nyil: 0, ido: 240},
-    { nyil: 0, ido: 240},
+    { nyil: 0, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 240},
+    { nyil: 3, ido: 240, tipus: "kill"},
     { nyil: 3, ido: 240},
-    { nyil: 3, ido: 240},
-    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240, tipus: "kill"},
     { nyil: 0, ido: 240},
-    { nyil: 2, ido: 240},
+    { nyil: 2, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 240},
-    { nyil: 3, ido: 240},
+    { nyil: 3, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 240},
-    { nyil: 0, ido: 240},
+    { nyil: 0, ido: 240, tipus: "kill"},
     { nyil: 1, ido: 1020},
     //8000
 
@@ -567,10 +568,7 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     //7240
 
     { nyil: 0, ido: 500},
-    { nyil: 3, ido: 120},
-    { nyil: 3, ido: 120},
-    { nyil: 3, ido: 120},
-    { nyil: 3, ido: 120},
+    { nyil: 3, ido: 600, tipus: "hold", hossz: 480},
     { nyil: 1, ido: 480},
     { nyil: 1, ido: 480},
     { nyil: 3, ido: 480},
@@ -578,10 +576,7 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     { nyil: 2, ido: 480},
     { nyil: 0, ido: 480},
     { nyil: 3, ido: 480},
-    { nyil: 1, ido: 120},
-    { nyil: 1, ido: 120},
-    { nyil: 1, ido: 120},
-    { nyil: 1, ido: 120},
+    { nyil: 1, ido: 600, tipus: "hold", hossz: 480},
     { nyil: 2, ido: 480},
     { nyil: 1, ido: 480},
     { nyil: 2, ido: 480},
@@ -885,6 +880,7 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     scoreDiv.id = "scoreDiv"
     mainDiv.appendChild(scoreDiv)
     const activeNotes = []
+    const pressedLanes = new Set()
     let combo = 1
     let elapsedTime = 0
     let gameOver = false;
@@ -930,57 +926,110 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
             }
             
             
-            if (closestNote && smallestDistance <= 35) {
+            if (closestNote && smallestDistance <= 80) {
+            if (closestNote.type === "hold") {
+                // Elindítjuk a hosszan nyomást.
+                closestNote.holding = true;
                 closestNote.hit = true;
-                closestNote.element.remove();
+                closestNote.holdStarted = performance.now();
+                closestNote.lastTick = performance.now();
             
-                const index = activeNotes.indexOf(closestNote);
-                if (index !== -1) {
-                    activeNotes.splice(index, 1);
-                }
-            
-                console.log("PERFECT!!!");
-                score += 20 * combo
-                combo += 0.1
-                HangJatszo(Hit)
-            } 
-            else if (closestNote && smallestDistance >= 35 && smallestDistance <= 80){
-                closestNote.hit = true;
-                closestNote.element.remove();
-            
-                const index = activeNotes.indexOf(closestNote);
-                if (index !== -1) {
-                    activeNotes.splice(index, 1);
-                }
-                console.log("MID!")
-                score += 10 * combo
-                combo += 0.1
-                HangJatszo(Hit)
+                requestAnimationFrame(() => updateHold(closestNote));
             }
-            
+            else if(closestNote.type === "kill"){
+                closestNote.hit = true;
+                gameOver = true
+                song.pause()
+                alert("Rányomtál a rossz nyílra. vesztettél!")
+                mainTitle()
+                
+
+
+            } else {
+                
+                closestNote.hit = true;
+                closestNote.element.remove();
+
+                const index = activeNotes.indexOf(closestNote);
+                if (index !== -1) {
+                    activeNotes.splice(index, 1);
+                }
+
+                score += smallestDistance <= 35 ? Math.round(20 * combo) : Math.round(10 * combo);
+                combo += 0.1;
+                HangJatszo(Hit);
+    }
+
+    scoreDiv.innerHTML = score;
+    } 
             
             else {
                 console.log("MISS!");
-                score -= 20 * combo
+                score -= math.round(20 * combo)
                 combo = 1
             }
             scoreDiv.innerHTML = score
-        }
+}
+function updateHold(note) {
+    if (!note.holding || gameOver) return;
+
+    const elapsed = performance.now() - note.holdStarted;
+
+    if (!pressedLanes.has(note.lane)) {
+        note.holding = false;
+        note.element.remove();
+
+        const index = activeNotes.indexOf(note);
+        if (index !== -1) activeNotes.splice(index, 1);
+
+        return;
+    }
+
+    const now = performance.now();
+
+    if (now - note.lastTick >= 100) {
+        score += Math.round(2 * combo);
+        note.lastTick = now;
+        scoreDiv.innerHTML = score;
+    }
+
+    // Ha végig tartottad, extra pont jár.
+    if (elapsed >= note.holdDuration) {
+        note.holding = false;
+        note.element.remove();
+
+        const index = activeNotes.indexOf(note);
+        if (index !== -1) activeNotes.splice(index, 1);
+
+        score += Math.round(20 * combo);
+        combo += 0.1;
+        scoreDiv.innerHTML = score;
+
+        HangJatszo(Hit);
+        return;
+    }
+
+    requestAnimationFrame(() => updateHold(note));
+}
      document.addEventListener("keydown", (event) => {
         if(event.repeat) return
         if (event.key === left) {
+            pressedLanes.add(0)
             ArrowButtons.children[0].classList.add("active")
             checkHit(0);
         }
         if (event.key === up) {
+            pressedLanes.add(1)
             ArrowButtons.children[1].classList.add("active")
             checkHit(1);
         }
         if (event.key === down) {
+            pressedLanes.add(2)
             ArrowButtons.children[2].classList.add("active")
             checkHit(2);
         }
         if (event.key === right) {
+            pressedLanes.add(3)
             ArrowButtons.children[3].classList.add("active")
             checkHit(3);
         }
@@ -988,18 +1037,22 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
     })
     document.addEventListener("keyup", (event) =>{
         if (event.key === left) {
+            pressedLanes.delete(0)
             ArrowButtons.children[0].classList.remove("active")
             
         }
         if (event.key === up) {
+            pressedLanes.delete(1)
             ArrowButtons.children[1].classList.remove("active")
             
         }
         if (event.key === down) {
+            pressedLanes.delete(2)
             ArrowButtons.children[2].classList.remove("active")
             
         }
         if (event.key === right) {
+            pressedLanes.delete(3)
             ArrowButtons.children[3].classList.remove("active")
         }
 
@@ -1015,6 +1068,16 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
         }
         const note = document.createElement("div")
         note.classList.add("note")
+        if (noteData.tipus === "hold") {
+        note.classList.add("hold-note");
+        note.style.setProperty(
+            "--hold-height",
+            `${noteData.hossz}px`
+         );
+        }
+        else if(noteData.tipus === "kill"){
+            note.setAttribute("style", "color: red;")
+        }
         let position = -100;
         let lastTime = null;
         if(noteData.nyil === 0) note.innerHTML = "&#8592"
@@ -1035,33 +1098,34 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
              position += speed * deltaTime;
              note.style.top = position + "px";
 
-             if (position < window.innerHeight) {
-    requestAnimationFrame(moveNote);
-} else {
-    note.remove();
-
-    const index = activeNotes.findIndex(
-        activeNote => activeNote.element === note
-    );
-
-    if (index !== -1) {
-        const missedNote = activeNotes[index];
-        if (!missedNote.hit && !gameOver) {
-            score -= 20;
-            combo = 1;
-
-            console.log("MISSED NOTE!");
-
-            scoreDiv.innerHTML =   score;
-
+             if (position < window.innerHeight || activeNote.holding) {
+                    requestAnimationFrame(moveNote);
             
-            
-        }
+                } else {
+                note.remove();
 
-        activeNotes.splice(index, 1);
-    }
-}
-        }
+                const index = activeNotes.findIndex(
+                    activeNote => activeNote.element === note
+                );
+
+            if (index !== -1) {
+                const missedNote = activeNotes[index];
+                if (!missedNote.hit && !gameOver) {
+                    score -= 20;
+                    combo = 1;
+
+                    console.log("MISSED NOTE!");
+
+                    scoreDiv.innerHTML =   score;
+
+
+
+                    }
+
+                    activeNotes.splice(index, 1);
+                }
+            }
+        }   
         
         setTimeout(() => {
             if(activeNote.hit) return;
@@ -1078,7 +1142,14 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
             element: note,
             lane: noteData.nyil,
             hit: false,
-            active: false
+            active: false,
+
+
+            type: noteData.tipus || "normal",
+            holdDuration: noteData.hossz || 0,
+            holding: false,
+            holdStarted: 0,
+            lastTick: 0
         }
         activeNotes.push(activeNote)
         elapsedTime += noteData.ido

@@ -928,7 +928,6 @@ function Game(left, up, down, right, mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "
             
             if (closestNote && smallestDistance <= 80) {
             if (closestNote.type === "hold") {
-                // Elindítjuk a hosszan nyomást.
                 closestNote.holding = true;
                 closestNote.hit = true;
                 closestNote.holdStarted = performance.now();
@@ -993,7 +992,6 @@ function updateHold(note) {
         scoreDiv.innerHTML = score;
     }
 
-    // Ha végig tartottad, extra pont jár.
     if (elapsed >= note.holdDuration) {
         note.holding = false;
         note.element.remove();

@@ -265,3 +265,264 @@ body{
     font-size: 1.5em;
     font-weight: bold;
 }
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px;
+
+    background:
+        radial-gradient(ellipse at 50% 0%,
+        rgba(70, 35, 120, 0.25),
+        transparent 60%),
+        #08080d;
+
+    color: #f5ead0;
+}
+
+
+
+.button {
+    border: 3px solid rgba(255,255,255,0.8);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,0.7),
+        0 8px 25px rgba(0,0,0,0.35);
+
+    font-size: 1.2em;
+    letter-spacing: 2px;
+
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    border: 3px solid transparent;
+
+    background:
+        linear-gradient(rgba(30,30,40,0.95), rgba(30,30,40,0.95)) padding-box,
+        conic-gradient(red, yellow, lime, cyan, blue, magenta, red) border-box;
+
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px rgba(100,80,255,0.2);
+}
+
+.button:active {
+    transform: translateY(2px) scale(0.97);
+}
+
+
+
+.mainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    min-height: 85vh;
+    margin: auto;
+}
+
+.mainDiv h1 {
+    color: #fff2d5;
+    text-shadow:
+        4px 4px 0 #542d91,
+        0 0 25px rgba(130,80,255,0.35);
+
+    line-height: 1.1;
+    letter-spacing: -4px;
+}
+
+
+.uiverse-pixel-radio-group {
+    gap: 25px;
+    padding: 25px;
+
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.035);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.uiverse-pixel-radio {
+    min-height: 45px;
+    font-size: 1.1em;
+
+    transition: 0.2s ease;
+}
+
+.uiverse-pixel-radio:hover {
+    color: #ffe66d;
+    transform: translateX(5px);
+}
+
+.uiverse-pixel-radio input[type="radio"] {
+    width: 2.5em;
+    height: 2.5em;
+
+    background: #a3442a;
+
+    box-shadow:
+        0 0 0 3px #000,
+        0 0 0 5px #fff;
+}
+
+.uiverse-pixel-radio input[type="radio"]::before {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+
+
+.description {
+    width: 350px;
+    padding: 25px;
+
+    align-self: flex-start;
+
+    background: rgba(255,255,255,0.06);
+    border-left: 4px solid #a77bff;
+    border-radius: 5px;
+
+    color: #f5ead0;
+    font-size: 1.1em;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== JÁTÉKNYILAK ===== */
+
+.arrow {
+    border: 3px solid transparent;
+    background:
+        linear-gradient(#20202b, #20202b) padding-box,
+        conic-gradient(red, yellow, lime, cyan, blue, magenta, red) border-box;
+
+    color: #fff2d5;
+
+    box-shadow:
+        0 8px 0 #090909,
+        0 12px 25px rgba(0,0,0,0.5);
+
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.arrow.active {
+    filter: brightness(1.6);
+    transform: scale(0.94);
+    box-shadow: 0 3px 0 #090909;
+}
+
+/* ===== LEESŐ NYILAK ===== */
+
+.note {
+    background: rgba(25,25,35,0.85);
+    border: 2px solid #fff2d5;
+    border-radius: 8px;
+
+    text-shadow: 0 0 12px #00ff0d;
+    box-shadow: 0 0 15px rgba(0,255,13,0.2);
+}
+
+.note.hold-note {
+    border-color: #fbff00;
+    box-shadow: 0 0 20px rgba(251,255,0,0.35);
+}
+
+/* ===== PONTSZÁM ===== */
+
+#scoreDiv {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+
+    padding: 15px 30px;
+
+    border: 3px solid transparent;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(#20202b, #20202b) padding-box,
+        conic-gradient(red, yellow, lime, cyan, blue, magenta, red) border-box;
+
+    color: #fff2d5;
+    text-shadow: 0 0 15px #a77bff;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== SETTINGS ===== */
+
+#settingsDiv {
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 80vh;
+}
+
+#optionDiv {
+    padding: 25px;
+
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.05);
+    color: #fff2d5;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.setting-checkbox {
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.setting-checkbox:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.key-container .arrow {
+    box-shadow: 0 5px 0 #090909;
+}
+
+/* ===== KISEBB KÉPERNYŐ ===== */
+
+@media (max-width: 900px) {
+    .mainDiv {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #settingsDiv {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .description {
+        width: min(350px, 90vw);
+    }
+
+    .arrow {
+        width: 100px;
+        height: 100px;
+        font-size: 3em;
+    }
+
+    .key-container {
+        flex-wrap: wrap;
+    }
+}

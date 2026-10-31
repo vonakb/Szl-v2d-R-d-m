@@ -2918,9 +2918,9 @@ else if(Zene === "Finger Burner"){
     scoreDiv.innerHTML = score;
     } 
             
-            else {
+            else if(closestNote){
                 console.log("MISS!");
-                score -= math.round(20 * combo)
+                score -= Math.round(5 * combo)
                 combo = 1
             }
             scoreDiv.innerHTML = score
@@ -3186,9 +3186,7 @@ settingsButton.addEventListener("click", () => {
         </div>
     `;
 
-    const radiok = document.querySelectorAll(
-        '.uiverse-pixel-radio input[type="radio"]'
-    );
+    const radiok = mainDiv.querySelectorAll('.uiverse-pixel-radio input[type="radio"]');
 
     const OptionDiv = document.querySelector("#optionDiv");
 

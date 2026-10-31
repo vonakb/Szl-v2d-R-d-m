@@ -10,7 +10,8 @@ function HangJatszo(audio, kezdoIdo = 0){
     audio.currentTime = kezdoIdo
     audio.play().catch(() => {})
 }
-function songSelector(mainDiv, left, up, down, right) {
+function songSelector(mainDiv, left, up, down, right, killNotes) {
+
     mainDiv.innerHTML = `<div class="uiverse-pixel-radio-group">
   <label class="uiverse-pixel-radio">
     <input type="radio" name="pixel-choice"  />
@@ -83,7 +84,7 @@ function songSelector(mainDiv, left, up, down, right) {
     
     }
     playGombDiv.addEventListener("click", () => {
-        Game(left, up, down, right , mainDiv, zene)
+        Game(left, up, down, right , mainDiv, zene, killNotes)
     })
     descriptionUpdate()
 
@@ -102,7 +103,7 @@ function songSelector(mainDiv, left, up, down, right) {
 
 }
 
-function Game(left = "ArrowLeft", up = "ArrowUp", down = "ArrowDown", right = "ArrowRight", mainDiv, Zene){ //"ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv
+function Game(left = "ArrowLeft", up = "ArrowUp", down = "ArrowDown", right = "ArrowRight", mainDiv, Zene, killNotes){ //"ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight", mainDiv
     let notes = []
     let song = null
     //#region Dzsekszon
@@ -2882,7 +2883,7 @@ else if(Zene === "Finger Burner"){
             }
             
             
-            if (closestNote && smallestDistance <= 80) {
+            if ((closestNote && smallestDistance <= 80) || ((closestNote && smallestDistance <= 80 && closestNote.type === "kill" && !killNotes)) ) {
                 if (closestNote.type === "hold") {
                     closestNote.holding = true;
                     closestNote.hit = true;
@@ -2891,16 +2892,20 @@ else if(Zene === "Finger Burner"){
                 
                     requestAnimationFrame(() => updateHold(closestNote));
                 }
-            /*else if(closestNote.type === "kill"){
+            else if(closestNote.type === "kill"){
+                if(!killNotes){
                 closestNote.hit = true;
                 gameOver = true
                 song.pause()
                 alert(`Rányomtál a rossz nyílra. vesztettél! Viszont ${score} pontot szereztél!`)
                 mainTitle()
+                }
+                else return
+                
                
 
 
-            }*/  else {
+            }  else {
                 
                 closestNote.hit = true;
                 closestNote.element.remove();
@@ -3030,7 +3035,9 @@ function updateHold(note) {
          );
         }
         else if(noteData.tipus === "kill"){
-            note.setAttribute("style", "color: red;")
+            if (!killNotes) {
+                note.setAttribute("style", "color: red;")
+            }
         }
         let position = -100;
         let lastTime = null;
@@ -3152,7 +3159,7 @@ function mainTitle() {
     playButton.classList.add("button")
     const playButtonTEXT = document.createTextNode("PLAY")
     playButton.appendChild(playButtonTEXT)
-    playButton.addEventListener("click", () => {songSelector(mainDiv, keys.left, keys.up, keys.down, keys.right);})
+    playButton.addEventListener("click", () => {songSelector(mainDiv, keys.left, keys.up, keys.down, keys.right, killNotes);})
 
 
     const settingsButton = document.createElement("div")

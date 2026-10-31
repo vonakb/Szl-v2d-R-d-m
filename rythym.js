@@ -1535,19 +1535,16 @@ else if(Zene === "Finger Burner"){
 
 //#region  BAM BAM Rész
 
-        {nyil: 0, ido: 100},
-        {nyil: 2, ido: 100},
         {nyil: 2, ido: 100, tipus: "kill"},
         {nyil: 2, ido: 100},
         {nyil: 0, ido: 100, tipus: "kill"},
-        {nyil: 2, ido: 100},
-        {nyil: 1, ido: 100},
         {nyil: 2, ido: 100},
         {nyil: 0, ido: 50},
         {nyil: 1, ido: 50},
         {nyil: 0, ido: 50},
         {nyil: 2, ido: 50},
         {nyil: 0, ido: 100},
+        {nyil: 1, ido: 100},
         {nyil: 0, ido: 50},
         {nyil: 1, ido: 50},
         {nyil: 0, ido: 50},
@@ -1907,11 +1904,851 @@ else if(Zene === "Finger Burner"){
     {nyil: 1, ido: 0, tipus: "kill"},
     {nyil: 0, ido: 400, tipus: "kill"},
 
+    {nyil: 2, ido: 0},
+    {nyil: 0, ido: 0},
+    {nyil: 3, ido: 0, tipus: "kill"},
+    {nyil: 1, ido: 400, tipus: "kill"},
     
+    {nyil: 3, ido: 0},
+    {nyil: 2, ido: 0},
+    {nyil: 1, ido: 0, tipus: "kill"},
+    {nyil: 0, ido: 400, tipus: "kill"},
+
+//#endregion
+
+//#region crazy buildup
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+        
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+        
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 500},
+
+//#endregion
+
+//#region Szlalomozás
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 200, tipus: "kill"},
+
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 200, tipus: "kill"},
+
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 200, tipus: "kill"},
+
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 200, tipus: "kill"},
+
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 200, tipus: "kill"},
+
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 50},
+        {nyil: 0, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 200, tipus: "kill"},
+
+        {nyil: 3, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 3, ido: 50, tipus: "kill"},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 400, tipus: "kill"},
+
+
+        
+        
+
+//#endregion
+    
+//#region Easy Vibes
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 200 },
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 400  },
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 300  },
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100 },
+        {nyil: 1, ido: 500, tipus: "hold", hossz: 100 },
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 300  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 100  },
+        {nyil: 1, ido: 1500  },
+
+
+        
 
 
 //#endregion
-    ]
+//#region VÉÉÉGEEE VÉGRE EMBER
+{nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+
+
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 50},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 1, ido: 50},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100},  // 250
+        {nyil: 1, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 2, ido: 100},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 400
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 50},
+        {nyil: 1, ido: 50},
+        {nyil: 0, ido: 100, tipus: "kill"},
+        {nyil: 2, ido: 100},
+        {nyil: 2, ido: 100},
+        {nyil: 3, ido: 100}, // 500
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 0, ido: 100},
+        {nyil: 2, ido: 50, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 1, ido: 100},
+        {nyil: 2, ido: 100, tipus: "kill"},
+        {nyil: 3, ido: 100}, // 250
+        {nyil: 0, ido: 50, tipus: "kill"},
+//#endregion
+]
+
 }
 
 
@@ -2058,7 +2895,7 @@ else if(Zene === "Finger Burner"){
                 closestNote.hit = true;
                 gameOver = true
                 song.pause()
-                alert("Rányomtál a rossz nyílra. vesztettél!")
+                alert(`Rányomtál a rossz nyílra. vesztettél! Viszont ${score} pontot szereztél!`)
                 mainTitle()
                
 

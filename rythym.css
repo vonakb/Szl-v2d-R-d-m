@@ -68,7 +68,7 @@ body{
 .arrow.active {
     filter: brightness(1.3);
     filter: blur(2);
-    transform:scale(0.98);
+    transform:scale(0.94);
 }
 
 .note{

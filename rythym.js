@@ -2770,11 +2770,11 @@ else if(Zene === "Finger Burner"){
 //#region MIZU
  else if(Zene === "FLUOR - MIZU"){
     song = FLUOR
-    HangJatszo(FLUOR, 30.5)
+    HangJatszo(FLUOR)
     notes = [
 
         //#region intro
-        {nyil: 0, ido: 1000}, //-30500
+        {nyil: 0, ido: -30500}, //-30500
         {nyil: 0, ido: 400, tipus: "hold", hossz: 200},
         {nyil: 0, ido: 800, tipus: "hold", hossz: 200},
         {nyil: 2, ido: 200},

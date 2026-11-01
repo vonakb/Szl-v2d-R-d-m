@@ -2,6 +2,7 @@ const Hit = new Audio("Hit.mp3")
 const MJ = new Audio("SlaveToTheRythym.webm")
 const tut = new Audio("tutorial.mp3")
 const FingerBurner = new Audio("Acid Burner.webm")
+const FLUOR = new Audio("FLUOR - MIZU.mp3")
 Hit.volume = 0.3
 MJ.volume = 0.1
 tut.volume = 0.5
@@ -10,23 +11,23 @@ function HangJatszo(audio, kezdoIdo = 0){
     audio.currentTime = kezdoIdo
     audio.play().catch(() => {})
 }
-function songSelector(mainDiv, left, up, down, right, killNotes) {
+function songSelector(mainDiv, left, up, down, right, killNotes, vegeredmeny) {
 
     mainDiv.innerHTML = `<div class="uiverse-pixel-radio-group">
   <label class="uiverse-pixel-radio">
-    <input type="radio" name="pixel-choice"  />
+    <input type="radio" name="pixel-choice" checked="" />
     <span class="label-text">Tutorial</span>
   </label>
   <label class="uiverse-pixel-radio">
     <input type="radio" name="pixel-choice" />
-    <span class="label-text">OUT OF ORDER</span>
+    <span class="label-text">FLUOR - MIZU</span>
   </label>
   <label class="uiverse-pixel-radio">
     <input type="radio" name="pixel-choice" />
     <span class="label-text">Slave To The Rhythm - Michael Jackson</span>
   </label>
   <label class="uiverse-pixel-radio">
-    <input type="radio" name="pixel-choice" checked=""/>
+    <input type="radio" name="pixel-choice" />
     <span class="label-text">Finger Burner</span>
   </label>
 </div>
@@ -53,15 +54,27 @@ function songSelector(mainDiv, left, up, down, right, killNotes) {
             
             if (szoveg === "Tutorial") {
                 description = "Minecraft vagy Elden Ring? Mindegy milyen játék, de mindig érdemes ezzel kezdeni hogy megtudd mi vár rád a jövőben.";
+                if (vegeredmeny["Tutorial"] !== undefined) {
+                    description += "Eddigi rekordod: " + vegeredmeny["Tutorial"]
+                }
             } 
-            else if (szoveg === "OUT OF ORDER") {
-                description = "Majd kitalálom";
+            else if (szoveg === "FLUOR - MIZU") {
+                description = 'Na mizu mizu mizu ;) (Avagy a "második Tutorial" XD)';
+                if (vegeredmeny["Slave To The Rhythm - Michael Jackson"] !== undefined) {
+                    description += "Eddigi rekordod: " + vegeredmeny["Slave To The Rhythm"]
+                }
             } 
             else if (szoveg === "Slave To The Rhythm - Michael Jackson") {
                 description = "Heheeee ;) ";
+                if (vegeredmeny["Slave To The Rhythm - Michael Jackson"] !== undefined) {
+                    description += "Eddigi rekordod: " + vegeredmeny["Slave To The Rhythm"]
+                }
             }
             else if (szoveg === "Finger Burner") {
                 description = "Ujjakra vigyázni (a mentálra is)";
+                if (vegeredmeny["Finger Burner"] !== undefined) {
+                    description += "\n Eddigi rekordod: " + vegeredmeny["Finger Burner"]
+                }
             }
 
 
@@ -2754,7 +2767,552 @@ else if(Zene === "Finger Burner"){
 
 
 //#endregion
-    
+//#region MIZU
+ else if(Zene === "FLUOR - MIZU"){
+    song = FLUOR
+    HangJatszo(FLUOR, 30.5)
+    notes = [
+
+        //#region intro
+        {nyil: 0, ido: 1000}, //-30500
+        {nyil: 0, ido: 400, tipus: "hold", hossz: 200},
+        {nyil: 0, ido: 800, tipus: "hold", hossz: 200},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 1700},
+        {nyil: 2, ido: 400},
+        {nyil: 1, ido: 500},
+
+
+        {nyil: 0, ido: 400, tipus: "hold", hossz: 200},
+        {nyil: 0, ido: 800, tipus: "hold", hossz: 200},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 1700},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 500},
+
+
+        {nyil: 0, ido: 400, tipus: "hold", hossz: 200},
+        {nyil: 0, ido: 1000, tipus: "hold", hossz: 200},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 1400},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 500},
+
+
+        {nyil: 0, ido: 400, tipus: "hold", hossz: 200},
+        {nyil: 0, ido: 1000, tipus: "hold", hossz: 200},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 1400},
+        {nyil: 2, ido: 200},
+        {nyil: 1, ido: 600},
+//#endregion
+        //#region Zúzunk az éjszakába
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 3, ido: 600},
+        
+
+
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 240},
+        {nyil: 3, ido: 240},
+        {nyil: 0, ido: 480},
+        {nyil: 2, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 0, ido: 240},
+        {nyil: 1, ido: 600},
+
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 240},
+        {nyil: 3, ido: 240},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 240},
+        {nyil: 1, ido: 240},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 0, ido: 240},
+        {nyil: 2, ido: 600},
+
+        
+
+
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 800},
+
+
+
+
+
+        //#endregion
+
+        //#region Csak akkor bulizok
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 2, ido: 300},
+        {nyil: 0, ido: 400},
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 400, tipus: "hold", hossz: 100},
+
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 2, ido: 400},
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 400, tipus: "hold", hossz: 100},
+
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 0, ido: 400},
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 900, tipus: "hold", hossz: 100},
+
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 1000},
+
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 480, tipus: "hold", hossz: 480},
+        {nyil: 3, ido: 1000, tipus: "hold", hossz: 480},
+
+        
+
+        //#endregion
+
+        //#region KICSI LÁNY
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 1200},
+
+
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 2, ido: 1000},
+
+
+        //#endregion
+
+        //#region Világos van de 
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 1, ido: 240},
+        {nyil: 0, ido: 240},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 3, ido: 600},
+        
+
+
+        {nyil: 0, ido: 480},
+        {nyil: 0, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 3, ido: 240},
+        {nyil: 0, ido: 240},
+        {nyil: 1, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 0, ido: 600},
+
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 240},
+        {nyil: 2, ido: 240},
+        {nyil: 3, ido: 240},
+        {nyil: 0, ido: 240},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480, tipus: "hold", hossz: 240},
+        {nyil: 3, ido: 600},
+
+        
+
+
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 2000},
+
+
+        //#endregion
+
+         //#region Csak akkor bulizok
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 2, ido: 300},
+        {nyil: 0, ido: 400},
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 400, tipus: "hold", hossz: 100},
+
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 2, ido: 400},
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 400, tipus: "hold", hossz: 100},
+
+        {nyil: 3, ido: 400},
+        {nyil: 0, ido: 400},
+
+        {nyil: 1, ido: 200},
+        {nyil: 0, ido: 400},
+
+
+        {nyil: 0, ido: 200, tipus: "hold", hossz: 100},
+        {nyil: 3, ido: 900, tipus: "hold", hossz: 100},
+
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 1000},
+
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 1, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 250},
+        {nyil: 3, ido: 250},
+        {nyil: 2, ido: 250},
+        {nyil: 0, ido: 480, tipus: "hold", hossz: 480},
+        {nyil: 3, ido: 1000, tipus: "hold", hossz: 480},
+
+        
+
+        //#endregion
+
+        //#region KICSI LÁNY
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 1200},
+
+
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 2, ido: 5000},
+    //#endregion
+
+    //#region KillNoteos rész
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 0, tipus: "kill"},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 0, tipus: "kill"},
+        {nyil: 1, ido: 1000},
+
+        
+    //#endregion
+
+
+    //#region KICSI LÁNY
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 1200},
+
+
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 3, ido: 480},
+        {nyil: 0, ido: 480},
+        {nyil: 1, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 2, ido: 480},
+        {nyil: 2, ido: 5000},
+    //#endregion
+
+]
+
+
+ }
+
+//#endregion
     mainDiv.innerHTML = ""
     let score = 80;
     
@@ -2769,10 +3327,11 @@ else if(Zene === "Finger Burner"){
 
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: clamp(8px, 2vw, 30px);
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;`)
+
     if(!(left.includes("Arrow"))){
         const Arrow = document.createElement("div")
         Arrow.classList.add("arrow")
@@ -2840,7 +3399,7 @@ else if(Zene === "Finger Burner"){
     const pressedLanes = new Set()
     let combo = 1
     let elapsedTime = 0
-    let gameOver = false;
+    let gameOver = false
     function WinGame(song) {
         song.addEventListener("ended", () => {
         if (gameOver) return;
@@ -2850,7 +3409,10 @@ else if(Zene === "Finger Burner"){
         window.alert(
             "Gratulálok, végigvitted. Elért pontszámod: " + score
         );
-
+        vegeredmeny[Zene] = Math.max(
+            vegeredmeny[Zene] ?? 0,
+            score
+        );
         mainDiv.innerHTML = "";
         mainTitle();
     }, { once: true });  
@@ -2898,6 +3460,10 @@ else if(Zene === "Finger Burner"){
                 gameOver = true
                 song.pause()
                 alert(`Rányomtál a rossz nyílra. vesztettél! Viszont ${score} pontot szereztél!`)
+                vegeredmeny[Zene] = Math.max(
+                    vegeredmeny[Zene] ?? 0,
+                     score
+                );
                 mainTitle()
                 }
                 else return
@@ -3047,7 +3613,7 @@ function updateHold(note) {
         if(noteData.nyil === 3) note.innerHTML = "&#8594"
         note.style.left = ArrowButtons.children[noteData.nyil].getBoundingClientRect().left
         + ArrowButtons.children[noteData.nyil].getBoundingClientRect().width / 2 + "px";
-        const speed = 1000; // pixel / másodperc
+
 
         function moveNote(currentTime) {
             if (lastTime === null) {
@@ -3055,10 +3621,18 @@ function updateHold(note) {
             }
             const deltaTime = (currentTime - lastTime) / 1000;
             lastTime = currentTime;
-
-             position += speed * deltaTime;
+            const speed = 1000 * (window.innerHeight / 800); // pixel / másodperc
+             
+            const targetArrow = ArrowButtons.children[noteData.nyil]
+            const targetRect = targetArrow.getBoundingClientRect()
+            
+             note.style.left = targetRect.left + targetRect.width/2 + "px"
+            
+            
+            position += speed * deltaTime;
+           
              note.style.top = position + "px";
-
+            
              if (position < window.innerHeight || activeNote.holding) {
                     requestAnimationFrame(moveNote);
             
@@ -3141,6 +3715,7 @@ let keys = {
     right: "ArrowRight"
 };
 
+let vegeredmeny = {}
 const mainDiv = document.createElement("div")
 
 function mainTitle() {
@@ -3159,7 +3734,7 @@ function mainTitle() {
     playButton.classList.add("button")
     const playButtonTEXT = document.createTextNode("PLAY")
     playButton.appendChild(playButtonTEXT)
-    playButton.addEventListener("click", () => {songSelector(mainDiv, keys.left, keys.up, keys.down, keys.right, killNotes);})
+    playButton.addEventListener("click", () => {songSelector(mainDiv, keys.left, keys.up, keys.down, keys.right, killNotes, vegeredmeny);})
 
 
     const settingsButton = document.createElement("div")
@@ -3171,11 +3746,6 @@ settingsButton.addEventListener("click", () => {
     mainDiv.innerHTML = `
         <div id="settingsDiv">
             <div class="uiverse-pixel-radio-group">
-
-                <label class="uiverse-pixel-radio">
-                    <input type="radio" name="pixel-choice" value="resolution" checked>
-                    <span class="label-text">Resolution</span>
-                </label>
 
                 <label class="uiverse-pixel-radio">
                     <input type="radio" name="pixel-choice" value="kill">
@@ -3214,7 +3784,7 @@ settingsButton.addEventListener("click", () => {
 
                 const checkbox = document.createElement("input");
                 checkbox.type = "checkbox";
-                checkbox.checked = killNotes;
+                checkbox.checked = killNotes; 
 
                 checkbox.addEventListener("change", () => {
                     killNotes = checkbox.checked;
